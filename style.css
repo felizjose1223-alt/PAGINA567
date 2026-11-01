@@ -1,0 +1,89 @@
+/* Variables CSS */
+:root {
+    --primary-color: #2C3E50;
+    --secondary-color: #18BC9C;
+    --accent-color: #F39C12;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+    color: #333;
+}
+
+/* Colores personalizados basados en variables */
+.bg-primary { background-color: var(--primary-color) !important; }
+.text-primary { color: var(--primary-color) !important; }
+.bg-secondary { background-color: var(--secondary-color) !important; }
+.text-secondary { color: var(--secondary-color) !important; }
+.btn-primary { background-color: var(--primary-color); border-color: var(--primary-color); }
+.btn-primary:hover { background-color: #1a252f; border-color: #1a252f; }
+.btn-accent { background-color: var(--accent-color); border-color: var(--accent-color); }
+.btn-accent:hover { background-color: #d68910; border-color: #d68910; }
+
+/* Efectos Hover y Transiciones */
+.service-card, .team-card, .contact-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover, .team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+}
+
+.contact-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 25px rgba(44, 62, 80, 0.3) !important;
+}
+
+/* Imágenes con object-fit cover */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Animación de latido de corazón */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    15% { transform: scale(1.15); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.15); }
+    60% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+.heartbeat-img {
+    animation: heartbeat 2s infinite;
+}
+
+/* Bordes animados tipo arcoíris */
+@keyframes rainbowBorder {
+    0% { border-color: #2C3E50; }
+    25% { border-color: #18BC9C; }
+    50% { border-color: #F39C12; }
+    75% { border-color: #e74c3c; }
+    100% { border-color: #2C3E50; }
+}
+
+.rainbow-border {
+    border: 3px solid #2C3E50;
+    animation: rainbowBorder 4s infinite;
+}
+
+/* Botones de carrusel no solapados */
+.custom-carousel-btn {
+    width: 5% !important;
+}
+
+.carousel-control-prev {
+    left: -40px !important;
+}
+
+.carousel-control-next {
+    right: -40px !important;
+}
+
+@media (max-width: 768px) {
+    .carousel-control-prev { left: -10px !important; }
+    .carousel-control-next { right: -10px !important; }
+}
